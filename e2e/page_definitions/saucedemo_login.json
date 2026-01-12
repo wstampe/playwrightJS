@@ -1,0 +1,8 @@
+{
+  "login": "[data-test='login-button']",
+  "login error": "[data-test='error']",
+  "username": "[data-test='username']",
+  "password": "[data-test='password']",
+  "error button": "button[data-test='error-button']",
+  "error heading": "h3[data-test='error']"
+}

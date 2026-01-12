@@ -1,0 +1,7 @@
+{
+  "title": "[data-test='title']",
+  "inventory item name": "[data-test='inventory-item-name']",
+  "inventory item price": "[data-test='inventory-item-price']",
+  "checkout button": "[data-test='checkout']",
+  "remove sauce labs bike light": "[data-test='remove-sauce-labs-bike-light']"
+}

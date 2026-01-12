@@ -1,0 +1,32 @@
+DONE:       <h2>./playwright.config.js</h2>
+DONE:       <h2>./Readme.md</h2>
+DONE:       <h2>./env/.env.local</h2>
+DONE:       <h2>./env/.env.sit</h2>
+PARTIALLY:  <h2>./package.json</h2>
+DONE:       <h2>./e2e/application_pages/page.json</h2>
+
+DONE:       <h2>./e2e/tests/UI/products.spec.js</h2>
+DONE:       <h2>./e2e/tests/UI/login.spec.js</h2>
+
+DONE:       <h2>./e2e/tests/API/api.spec.js</h2>
+DONE:       <h2>./e2e/tests/API/api.airports.spec.js</h2>
+DONE:       <h2>./e2e/tests/API/api.activity.spec.js</h2>
+DONE:       <h2>./e2e/tests/API/mountebank.spec.js</h2>
+
+DONE:       <h2>./e2e/tests/Data/Enter different usernames.json</h2>
+
+DONE:       <h2>./e2e/page_definitions/checkout_page.json</h2>
+DONE:       <h2>./e2e/page_definitions/your_cart.json</h2>
+DONE:       <h2>./e2e/page_definitions/saucedemo_login.json</h2>
+DONE:       <h2>./e2e/page_definitions/saucedemo_inventory.json</h2>
+
+DONE:       <h2>./e2e/support/constants.js</h2>
+DONE:       <h2>./e2e/support/testData.js</h2>
+DONE:       <h2>./e2e/support/pageElements.js</h2>
+DONE:       <h2>./e2e/support/elementHelper.js</h2>
+DONE:       <h2>./e2e/support/actionSteps.js</h2>
+DONE:       <h2>./e2e/support/dataStore.js</h2>
+DONE:       <h2>./e2e/support/expectedSteps.js</h2>
+DONE:       <h2>./e2e/support/hooksHelper.js</h2>
+DONE:       <h2>./tests-examples/demo-todo-app.spec.js.txt</h2>
+

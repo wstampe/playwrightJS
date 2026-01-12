@@ -1,0 +1,26 @@
+{
+  "name": "playwrightJS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  },
+  "scripts": {
+    "ui-tests": "export NODE_ENV=local && yarn playwright test ./UI --workers 1",
+    "ui-headed": "yarn playwright test ./UI --headed",
+    "api-tests": "yarn playwright test ./API --workers 1",
+    "all-tests": "yarn playwright test . --workers 1",
+    "ui-smoke": "yarn playwright test ./UI --workers 1 --grep @smoke",
+    "ui-both": "yarn playwright test ./UI --workers 1 --grep '@smoke|@cart'",
+    "ui-login": "yarn playwright test ./UI --workers 1 --grep @login",
+    "ui-jdata": "yarn playwright test ./UI --workers 1 --grep @jdata",
+    "ui-local": "export NODE_ENV=local && yarn playwright test ./UI --workers 1 --grep @jdata --headed",
+    "ui-sit": "export NODE_ENV=sit && yarn playwright test ./UI --workers 1 --grep @jdata --headed",
+    "ui-logLevel": "export NODE_ENV=local && export LOG_LEVEL_EXT=giiiiggggiidddddyyy && yarn playwright test ./UI --workers 1 --grep @jdata --headed"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

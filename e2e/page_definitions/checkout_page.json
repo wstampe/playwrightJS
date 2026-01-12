@@ -1,0 +1,9 @@
+{
+  "title": "[data-test='title']",
+  "first name": "[data-test='firstName']",
+  "last name": "[data-test='lastName']",
+  "post code": "[data-test='postalCode']",
+  "continue button": "[data-test='continue']",
+  "finish button": "[data-test='finish']",
+  "complete header": "[data-test='complete-header']"
+}

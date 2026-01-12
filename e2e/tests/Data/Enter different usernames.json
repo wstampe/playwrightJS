@@ -1,0 +1,9 @@
+{
+  "testName": "Enter an Incorrect Password",
+  "loginData": [
+    {"user": "locked_out_user", "password": "secret_sauce", "message": "Epic sadface: Sorry, this user has been locked out."},
+    {"user": "error_users", "password": "secret_sauce", "message": "Epic sadface: Username and password do not match any user in this service"},
+    {"user": "standard_user", "password": "error_pw", "message": "Epic sadface: Username and password do not match any user in this service"}
+  ]
+}
+

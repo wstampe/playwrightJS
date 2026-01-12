@@ -1,0 +1,13 @@
+{
+  "primary header": "[data-test='primary-header'] > .header_label",
+  "item description": "[data-test='inventory-item-description']:nth-of-type(2)",
+  "inventory item name": "[data-test='inventory-item-name']",
+  "add to cart sauce labs backpack": "[data-test='add-to-cart-sauce-labs-backpack']",
+  "add to cart button": "[data-test^='add-to-cart']",
+  "shopping cart link": "a[data-test='shopping-cart-link']",
+  "shopping cart badge": "span[data-test='shopping-cart-badge']",
+  "remove sauce labs bike light": "[data-test='remove-sauce-labs-bike-light']",
+  "inventory heading": "div[class='app_logo']",
+  "add to cart sauce labs bike light": "[data-test='add-to-cart-sauce-labs-bike-light']",
+  "back to products": "[data-test='back-to-products']"
+}
