@@ -1,7 +1,6 @@
 const { test, expect, toBeVisible } = require('@playwright/test');
 const {constants} = require("../../support/constants");
 const {hooksHelper} = require("../../support/hooksHelper");
-
 test.beforeEach(async({ },testInfo) => {
     hooksHelper.beforeHook(testInfo);
 })

@@ -6,7 +6,7 @@ const {expectedSteps} = require("../../support/expectedSteps");
 const {constants} = require("../../support/constants");
 const {hooksHelper} = require("../../support/hooksHelper");
 const {testData} = require("../../support/testData");
-// const {dotenv} = require('dotenv')
+//yarn add yaconst {dotenv} = require('dotenv')
 
 test.beforeEach(async({ },testInfo) => {
     hooksHelper.beforeHook(testInfo);
@@ -21,6 +21,7 @@ test.afterEach(async({ },testInfo) => {
 /* =.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=. */
 
 test('Enter an Incorrect Password', { tag: ['@login', '@smoke' ] },async ({ page }, testInfo ) => {
+
     await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
     await expectedSteps.checkOnCorrectPageURL(process.env.ENTRY_PAGE, page);
 
@@ -33,7 +34,7 @@ test('Enter an Incorrect Password', { tag: ['@login', '@smoke' ] },async ({ page
 
 test('Enter different usernames', { tag: ['@login', '@smoke', '@jdata' ] },async ({ page }, testInfo ) => {
     let dataJson = testData.returnTestData(testInfo.title);
-    console.log(process.env.LOG_LEVEL_EXT);
+    console.log(process.env.LOG_LEVEL);
     await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
 
     let scr = await page.locator('.login_logo').screenshot();
@@ -42,16 +43,15 @@ test('Enter different usernames', { tag: ['@login', '@smoke', '@jdata' ] },async
     scr = await page.locator('.submit-button.btn_action').screenshot();
     await testInfo.attach('screenshot', { body: scr, contentType: 'image/png' });
 
+   for (const jData of dataJson.loginData){
+       // await console.log(jData.user + ': ' + jData.password + ': ' + jData.message)
+       await actionSteps.fillElement('username',jData.user, page)
+       await actionSteps.fillElement('password',jData.password, page)
+       await actionSteps.clickElement('login', page)
+       await expectedSteps.checkElementIsVisible('error button', page)
+       await expectedSteps.checkTextInElement('error heading',jData.message, page)
+       await actionSteps.clearElement('username',page)
+       await actionSteps.clearElement('password',page)
 
-//    for (const jData of dataJson.loginData){
-//        await console.log(jData.user + ': ' + jData.password + ': ' + jData.message)
-//        await actionSteps.fillElement('username',jData.user, page)
-//        await actionSteps.fillElement('password',jData.password, page)
-//        await actionSteps.clickElement('login', page)
-//        await expectedSteps.checkElementIsVisible('error button', page)
-//        await expectedSteps.checkTextInElement('error heading',jData.message, page)
-//        await actionSteps.clearElement('username',page)
-//        await actionSteps.clearElement('password',page)
-
-//    }
+   }
 });
