@@ -15,6 +15,9 @@ test('API POST request', async({request}) => {
         data: {
             "name": "Raghav",
             "job": "teacher"
+        },
+        headers: {
+            'x-api-key': ''
         }
     })
 
@@ -24,6 +27,10 @@ test('API POST request', async({request}) => {
 });
 
 test('API Demo', async({request}) => {
-    const response = await request.get('https://reqres.in/api/users/2');
+    const response = await request.get('https://reqres.in/api/users/2',{
+        headers: {
+            'x-api-key': ''
+        }
+    });
     expect(response.status()).toBe(200);
 });

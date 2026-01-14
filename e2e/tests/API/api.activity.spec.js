@@ -10,9 +10,9 @@ test.afterEach(async({ },testInfo) => {
 })
 
 
-test('Boredapi {/api/activity}: 503 : should return a 503 response', async({request}) => {
+test('Boredapi {/api/activity}: 200 : should return a 200 response', async({request}) => {
 
-    const response = await request.get('https://www.boredapi.com/api/activity', {
+    const response = await request.get('https://bored.api.lewagon.com/api/activity', {
         headers: {            'Accept':  'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
             'Accept-Language':  'en-US,en;q=0.9',
             'Connection':  'keep-alive',
@@ -28,14 +28,14 @@ test('Boredapi {/api/activity}: 503 : should return a 503 response', async({requ
             'sec-ch-ua-platform':  '"macOS"'
         }
     });
-    expect(response.status()).toBe(503);
+    expect(response.status()).toBe(200);
 });
 
-test('Agify {?name=giggidy}: 200: giggidy will be 37 years old', async({request}) => {
+test('Agify {?name=giggidy}: 200: giggidy will be 39 years old', async({request}) => {
     const response = await request.get('https://api.agify.io/', { params: {"name": "giggidy"}});
     let jsonBody = (await response.json())
     expect(response.status()).toBe(200);
     expect(jsonBody.count).toBe(6);
     expect(jsonBody.name).toBe('giggidy');
-    expect(jsonBody.age).toBe(38);
+    expect(jsonBody.age).toBe(39);
 });
