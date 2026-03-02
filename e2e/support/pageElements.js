@@ -1,30 +1,47 @@
 // let {common} = require('../support/common')
 
 let pageElements = {
-    /* -- getPageElements -- ====================================================== */
+
+/* ============================================================================================================
+name : getPageElements
+desc : Given the current page and element, get CSS from the element key from page elements JSON
+=============================================================================================================== */
     getPageElements: function getPageElements (currentPage, currentElement) {
+        // CSS will be currentElement value in json
         let pageElt = this.pageFor(currentPage)[currentElement]
         return pageElt
     },
-    /* -- pageFor -- ====================================================== */
 
+/* ============================================================================================================
+name : pageFor
+desc : return the json file based on page param. ([page].json)
+=============================================================================================================== */
     pageFor: function (page) {
+        // construct the json file path
         return require('../page_definitions/' + page + '.json')
     },
 
-    /* -- getApplicationPage -- ====================================================== */
+/* ============================================================================================================
+name : getApplicationPage
+desc : Given the current page, get URL from the page key from application pages JSON
+=============================================================================================================== */
     getApplicationPage: function getApplicationPage (currentPage, currentElement) {
         let appPage = this.appFor(currentPage)[currentElement]
         return appPage
     },
 
-    /* -- appFor -- ====================================================== */
-
+/* ============================================================================================================
+name : appFor
+desc : return the json file based on page param. ([page].json)
+=============================================================================================================== */
     appFor: function (page) {
         return require('../application_pages/' + page + '.json')
     },
 
-    /* -- convertTextToIndex -- ====================================================== */
+/* ============================================================================================================
+name : convertTextToIndex
+desc : Map Index string to integer index and return integer index
+=============================================================================================================== */
     convertTextToIndex: function convertTextToIndex (indexText) {
         let textToIndex =
 
