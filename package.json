@@ -10,7 +10,8 @@
   "scripts": {
     "ui-tests": "export NODE_ENV=local && yarn playwright test ./UI --workers 1",
     "ui-headed": "export NODE_ENV=local && yarn playwright test ./UI --headed",
-    "api-tests": "yarn playwright test ./API/mountebank.spec.js --workers 1",
+    "api-tests": "yarn playwright test ./API/api.*.spec.js --workers 1",
+    "api-mountebank": "yarn playwright test ./API/mountebank.spec.js --workers 1",
     "all-tests": "export NODE_ENV=local && yarn playwright test . --workers 1",
     "ui-smoke": "export NODE_ENV=local && yarn playwright test ./UI --workers 1 --grep @smoke --headed",
     "ui-both": "yarn playwright test ./UI --workers 1 --grep '@smoke|@cart'",

@@ -34,6 +34,7 @@ test.describe(' Two Tests', () => {
         await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Bolt T-Shirt', 'third', page)
         await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Fleece Jacket', 'fourth', page)
         await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Onesie', 'fifth', page)
+        await expectedSteps.checkTextInNthElement('inventory item name', 'T-Shirt - Red', 'sixth', page)
         await actionSteps.clickNthElement('inventory item name', 'fourth', page)
         await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Fleece Jacket', 'first', page)
         await expectedSteps.checkTextInElement('back to products', 'Back to products', page)

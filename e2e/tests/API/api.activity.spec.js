@@ -13,7 +13,8 @@ test.afterEach(async({ },testInfo) => {
 test('Boredapi {/api/activity}: 200 : should return a 200 response', async({request}) => {
 
     const response = await request.get('https://bored.api.lewagon.com/api/activity', {
-        headers: {            'Accept':  'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        headers: {
+            'Accept':  'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
             'Accept-Language':  'en-US,en;q=0.9',
             'Connection':  'keep-alive',
             'Referer':  'https://apipheny.io/',
