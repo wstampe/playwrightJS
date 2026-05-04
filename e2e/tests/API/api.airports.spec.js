@@ -10,6 +10,7 @@ test.afterEach(async({ },testInfo) => {
     hooksHelper.afterHook(testInfo);
 })
 
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 test('https://jsonplaceholder.typicode.com/posts/1', async({request}) => {
     const response = await request.get('https://jsonplaceholder.typicode.com/posts/1');
     let jsonBody = (await response.json())
@@ -22,6 +23,7 @@ test('https://jsonplaceholder.typicode.com/posts/1', async({request}) => {
     });
 });
 
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 test('Jsonplaceholder {/posts} : 201 : id should be 101', async({request}) => {
     const response = await request.post("https://jsonplaceholder.typicode.com/posts", {
         data: {

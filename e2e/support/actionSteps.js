@@ -5,7 +5,6 @@ const {pageElements} = require("../support/pageElements");
 
 let actionSteps = {
 
-
 /* ============================================================================================================
 name : navigateToURL
 desc : navigate to URL based on the currentPage param
@@ -14,6 +13,7 @@ desc : navigate to URL based on the currentPage param
         await test.step('Navigate To URL - : [' + currentPage + ']', async () => {
             // Set the current page you are on
             dataStore.setCurrentPage(currentPage);
+
             // Retrieve URL from the page.json
             let expectedURL = pageElements.getApplicationPage('page', currentPage);
 
@@ -52,7 +52,7 @@ desc : click on the element based on currentElement param.
 
 /* ============================================================================================================
 name : clickNthElement
-desc : click on the nthe element based on currentElement and index params.
+desc : click on the nth element based on currentElement and index params.
 =============================================================================================================== */
 
     clickNthElement: async function clickNthElement(currentElement, strIndex, page) {

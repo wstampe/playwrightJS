@@ -20,7 +20,6 @@ test('Names 503 Error', async ({request}) => {
 });
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
 test('Dummy', async ({request}) => {
     const response = await request.get("http://localhost:4545/dummy");
     let jsonBody = (await response.json())
@@ -30,7 +29,6 @@ test('Dummy', async ({request}) => {
 
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
 test('Sally names', async ({request}) => {
     const response = await request.post("http://localhost:4545/names_mapper", {
         data: {"name": "sally"},
@@ -51,7 +49,6 @@ test('Sally names', async ({request}) => {
 
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
 test('Warren Names', async ({request}) => {
     const response = await request.post("http://localhost:4545/names_mapper", {
         data: {"name": "warren"},
@@ -73,7 +70,6 @@ test('Warren Names', async ({request}) => {
 
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
 test('400 Names', async ({request}) => {
     const response = await request.post("http://localhost:4545/names_mapper", {
         data: {"name": "names_400_reponse"},
@@ -91,7 +87,6 @@ test('400 Names', async ({request}) => {
 });
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
 test('500 Names', async ({request}) => {
     const response = await request.post("http://localhost:4545/names_mapper", {
         data: {"name": "names_500_reponse"},
@@ -110,7 +105,6 @@ test('500 Names', async ({request}) => {
 
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
 test('PS4', async ({request}) => {
     const response = await request.get("http://localhost:4546/PS4");
     let jsonBody = (await response.json())
@@ -124,14 +118,8 @@ test('PS4', async ({request}) => {
 
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
-
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
-
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
-
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 

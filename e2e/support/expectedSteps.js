@@ -60,8 +60,8 @@ desc : check that the element has the correct text content based on currentEleme
 =============================================================================================================== */
     checkTextInElement: async function checkTextInElement(currentElement, strTxt, page) {
         await test.step('Verify Text is correct in element - : [' + currentElement + '(' + strTxt + ')' + ']', async () => {
-            // Get selector for Current Element
 
+            // Get selector for Current Element
             let strCSS = elementHelper.getElementCSS(currentElement)
             // Try and Retry Block
             await expect(async () => {
@@ -69,8 +69,8 @@ desc : check that the element has the correct text content based on currentEleme
                 await expect(page.locator(strCSS)).toBeVisible();
 
                 // Get actual element text and Compare it with the expected text.
-                const strActualText = await page.locator(strCSS).textContent()
-                expect(strTxt).toEqual(strActualText)
+                const strActualText = await page.locator(strCSS).textContent();
+                expect(strTxt).toEqual(strActualText);
             }).toPass({
                 // Set intervals for 3 retries
                 intervals: [1_000, 2_000, 5_000],

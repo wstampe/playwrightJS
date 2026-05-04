@@ -21,42 +21,49 @@ test.describe(' Two Tests', () => {
     /* =.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=. */
 
     test('Check the Products in the Inventory Page', {tag: ['@smoke', '@inventory', '@login']}, async ({page}) => {
+
+        // Set the  initial Page based on the environment
         await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
         await expectedSteps.checkOnCorrectPageURL(process.env.ENTRY_PAGE, page);
-        await actionSteps.fillElement('username', 'standard_user', page)
-        await actionSteps.fillElement('password', 'secret_sauce', page)
-        await actionSteps.clickElement('login', page)
+
+        await actionSteps.fillElement('username', 'standard_user', page);
+        await actionSteps.fillElement('password', 'secret_sauce', page);
+        await actionSteps.clickElement('login', page);
+
         await expectedSteps.checkOnCorrectPageURL('saucedemo_inventory', page);
-        await expectedSteps.checkElementIsVisible('inventory heading', page)
-        await expectedSteps.checkTextInElement('inventory heading', 'Swag Labs', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Backpack', 'first', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Bike Light', 'second', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Bolt T-Shirt', 'third', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Fleece Jacket', 'fourth', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Onesie', 'fifth', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'T-Shirt - Red', 'sixth', page)
-        await actionSteps.clickNthElement('inventory item name', 'fourth', page)
-        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Fleece Jacket', 'first', page)
-        await expectedSteps.checkTextInElement('back to products', 'Back to products', page)
+        await expectedSteps.checkElementIsVisible('inventory heading', page);
+        await expectedSteps.checkTextInElement('inventory heading', 'Swag Labs', page);
+        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Backpack', 'first', page);
+        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Bike Light', 'second', page);
+        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Bolt T-Shirt', 'third', page);
+        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Fleece Jacket', 'fourth', page);
+        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Onesie', 'fifth', page);
+        await expectedSteps.checkTextInNthElement('inventory item name', 'T-Shirt - Red', 'sixth', page);
+        await actionSteps.clickNthElement('inventory item name', 'fourth', page);
+
+        await expectedSteps.checkTextInNthElement('inventory item name', 'Sauce Labs Fleece Jacket', 'first', page);
+        await expectedSteps.checkTextInElement('back to products', 'Back to products', page);
     });
 
     /* =.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=. */
     /* Name: Add product to cart and checkout
     /* =.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=. */
-    test('Add product to cart and checkout', {tag: ['@cart']}, async ({page}) => {        await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
+    test('Add product to cart and checkout', {tag: ['@cart']}, async ({page}) => {
+
+        // Set the  initial Page based on the environment
+        await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
         await expectedSteps.checkOnCorrectPageURL(process.env.ENTRY_PAGE, page);
 
-        await actionSteps.fillElement('username', 'standard_user', page)
-        await actionSteps.fillElement('password', 'secret_sauce', page)
-        await actionSteps.clickElement('login', page)
+        await actionSteps.fillElement('username', 'standard_user', page);
+        await actionSteps.fillElement('password', 'secret_sauce', page);
+        await actionSteps.clickElement('login', page);
 
         await expectedSteps.checkOnCorrectPageURL('saucedemo_inventory', page);
-        await actionSteps.clickElement('add to cart sauce labs bike light', page)
-        await actionSteps.clickElement('shopping cart link', page)
+        await actionSteps.clickElement('add to cart sauce labs bike light', page);
+        await actionSteps.clickElement('shopping cart link', page);
 
         await expectedSteps.checkOnCorrectPageURL('your_cart', page);
-
-        await actionSteps.clickElement('checkout button', page)
+        await actionSteps.clickElement('checkout button', page);
     });
 });
 
@@ -67,7 +74,7 @@ test.describe(' Two Tests', () => {
 
 test('Purchase a full product', {tag: ['@cart', '@single']}, async ({page}) => {
 
-
+    // Set the  initial Page based on the environment
     await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
     await expectedSteps.checkOnCorrectPageURL(process.env.ENTRY_PAGE, page);
     await actionSteps.fillElement('username', 'standard_user', page)

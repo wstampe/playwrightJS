@@ -10,6 +10,7 @@ test.afterEach(async({ },testInfo) => {
     hooksHelper.afterHook(testInfo);
 })
 
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 test('API POST request', async({request}) => {
     const response = await request.post("https://reqres.in/api/users", {
         data: {
@@ -26,6 +27,7 @@ test('API POST request', async({request}) => {
     expect(jsonBody.name).toBe('Raghav');
 });
 
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 test('API Demo', async({request}) => {
     const response = await request.get('https://reqres.in/api/users/2',{
         headers: {

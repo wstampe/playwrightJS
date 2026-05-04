@@ -33,16 +33,24 @@ test('Enter an Incorrect Password', { tag: ['@login', '@smoke' ] },async ({ page
 });
 
 test('Enter different usernames', { tag: ['@login', '@smoke', '@jdata' ] },async ({ page }, testInfo ) => {
+
+    // Data File based on the test name.
     let dataJson = testData.returnTestData(testInfo.title);
     console.log(process.env.LOG_LEVEL);
+
+    // Set the  initial Page based on the environment
     await actionSteps.navigateToURL(process.env.ENTRY_PAGE, page);
 
+    // Take screenshot of the logo and report it (just playing with this function :-) )
     let scr = await page.locator('.login_logo').screenshot();
     await testInfo.attach('screenshot', { body: scr, contentType: 'image/png' });
     await expectedSteps.checkOnCorrectPageURL(process.env.ENTRY_PAGE, page);
+
+    // Take screenshot of the logo and report it (just playing with this function :-) )
     scr = await page.locator('.submit-button.btn_action').screenshot();
     await testInfo.attach('screenshot', { body: scr, contentType: 'image/png' });
 
+   // Some functionality based on a Data file
    for (const jData of dataJson.loginData){
        // await console.log(jData.user + ': ' + jData.password + ': ' + jData.message)
        await actionSteps.fillElement('username',jData.user, page)

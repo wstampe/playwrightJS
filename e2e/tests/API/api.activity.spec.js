@@ -9,7 +9,7 @@ test.afterEach(async({ },testInfo) => {
     hooksHelper.afterHook(testInfo);
 })
 
-
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 test('Boredapi {/api/activity}: 200 : should return a 200 response', async({request}) => {
 
     const response = await request.get('https://bored.api.lewagon.com/api/activity', {
@@ -32,6 +32,7 @@ test('Boredapi {/api/activity}: 200 : should return a 200 response', async({requ
     expect(response.status()).toBe(200);
 });
 
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 test('Agify {?name=giggidy}: 200: giggidy will be 39 years old', async({request}) => {
     const response = await request.get('https://api.agify.io/', { params: {"name": "giggidy"}});
     let jsonBody = (await response.json())

@@ -1,76 +1,52 @@
-yarn playwright test
+* yarn playwright test
 
-yarn playwright test --headed
+* yarn playwright test --headed
 
-yarn playwright test --ui
+* yarn playwright test --ui
 
-yarn playwright show-report
+* yarn playwright show-report
 
-npx playwright codegen
+* npx playwright codegen
 
-yarn playwright test ./API
+* yarn playwright test ./API
 
+* yarn playwright test -g "title of test"
 
+* yarn playwright test --grep "title"
 
-
-
-yarn playwright test -g "title of test"
-
-yarn playwright test --grep "titl"
+* yarn playwright test mytest.js:17
 
 --project=chromium
 
-
-
-yarn playwright test mytest.js:17
-
-
-
-
+====================================================================
 
 Inside that directory, you can run several commands:
 
-
-
 yarn playwright test
 
-    Runs the end-to-end tests. 
-
-
+    Runs the end-to-end tests.
 
 yarn playwright test --ui
 
-    Starts the interactive UI mode. 
-
-
+    Starts the interactive UI mode.
 
 yarn playwright test --project=chromium
 
     Runs the tests only on Desktop Chrome. 
 
-
-
 yarn playwright test example
 
     Runs the tests in a specific file. 
 
-
-
 yarn playwright test --debug
 
-    Runs the tests in debug mode. 
-
-
+    Runs the tests in debug mode.
 
 yarn playwright codegen
 
     Auto generate tests with Codegen. 
 
-
-
 We suggest that you begin by typing:
-
-
 
     yarn playwright test 
 
